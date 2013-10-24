@@ -107,7 +107,53 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     return CGSizeMake(self.collectionView.bounds.size.width, height);
 }
 
-#pragma mark - Private
+#pragma mark - Setters -
+
+- (void)setItemInsets:(UIEdgeInsets)itemInsets
+{
+    if (UIEdgeInsetsEqualToEdgeInsets(_itemInsets, itemInsets)) {
+        return;
+    }
+    
+    _itemInsets = itemInsets;
+    
+    [self invalidateLayout];
+}
+
+- (void)setItemSize:(CGSize)itemSize
+{
+    if (CGSizeEqualToSize(_itemSize, itemSize)) {
+        return;
+    }
+    
+    _itemSize = itemSize;
+    
+    [self invalidateLayout];
+}
+
+- (void)setNumberOfColumns:(NSInteger)numberOfColumns
+{
+    if (_numberOfColumns == numberOfColumns) {
+        return;
+    }
+    
+    _numberOfColumns = numberOfColumns;
+    
+    [self invalidateLayout];
+}
+
+- (void)setInterItemSpacingY:(CGFloat)interItemSpacingY
+{
+    if (_interItemSpacingY == interItemSpacingY) {
+        return;
+    }
+    
+    _interItemSpacingY = interItemSpacingY;
+    
+    [self invalidateLayout];
+}
+
+#pragma mark - Private -
 
 - (CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath
 {
