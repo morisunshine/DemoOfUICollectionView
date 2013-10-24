@@ -44,7 +44,21 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - View Rotation -
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        self.photoAlbumLayout.numberOfColumns = 3;
+        CGFloat sideInset = [UIScreen mainScreen].preferredMode.size.width == 1136 ? 45 : 25;
+        self.photoAlbumLayout.itemInsets = UIEdgeInsetsMake(22, sideInset, 13, sideInset);
+    } else {
+        self.photoAlbumLayout.numberOfColumns = 2;
+        self.photoAlbumLayout.itemInsets = UIEdgeInsetsMake(22, 22, 13, 22);
+    }
+}
+
+#pragma mark - UICollectionViewDataSource -
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
