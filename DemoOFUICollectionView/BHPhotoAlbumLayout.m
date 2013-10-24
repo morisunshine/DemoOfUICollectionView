@@ -95,6 +95,18 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     return self.layoutInfo[BHPhotoAlbumLayoutPhotoCellKind][indexPath];
 }
 
+- (CGSize)collectionViewContentSize
+{
+    NSInteger rowCount = [self.collectionView numberOfSections];
+    if ([self.collectionView numberOfSections] % self.numberOfColumns) {
+        rowCount ++;
+    }
+    
+    CGFloat height = self.itemInsets.top + rowCount * self.itemSize.height * (rowCount - 1) * self.interItemSpacingY + self.itemInsets.bottom;
+    
+    return CGSizeMake(self.collectionView.bounds.size.width, height);
+}
+
 #pragma mark - Private
 
 - (CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath
