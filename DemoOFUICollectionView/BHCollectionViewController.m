@@ -7,8 +7,11 @@
 //
 
 #import "BHCollectionViewController.h"
+#import "BHPhotoAlbumLayout.h"
 
 @interface BHCollectionViewController ()
+
+@property (nonatomic, weak) IBOutlet BHPhotoAlbumLayout *photoAlbumLayout;
 
 @end
 
@@ -26,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
     // Do any additional setup after loading the view from its nib.
 }
 
