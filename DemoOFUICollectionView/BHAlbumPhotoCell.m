@@ -7,10 +7,11 @@
 //
 
 #import "BHAlbumPhotoCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BHAlbumPhotoCell ()
 
-@property (nonatomic, strong, readwrite) UIImageView *imageVIew;
+@property (nonatomic, strong, readwrite) UIImageView *imageView;
 
 @end
 
@@ -22,6 +23,19 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1.0];
+        
+        self.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.layer.borderWidth = 3.0;
+        self.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.layer.shadowRadius = 3.0;
+        self.layer.shadowOffset = CGSizeMake(0, 2.0);
+        self.layer.shadowOpacity = 0.5;
+        
+        self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.imageView.clipsToBounds = YES;
+        
+        [self.contentView addSubview:self.imageView];
     }
     return self;
 }
