@@ -75,6 +75,20 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     self.layoutInfo = newLayoutInfo;
 }
 
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
+{
+    NSMutableArray *allAttributes = [NSMutableArray arrayWithCapacity:self.layoutInfo.count];
+    
+    [self.layoutInfo enumerateKeysAndObjectsUsingBlock:^(NSString *elementIdentifier, NSDictionary *elementsInfo, BOOL *stop) {
+        [elementsInfo enumerateKeysAndObjectsUsingBlock:^(NSIndexPath *indexPath, UICollectionViewLayoutAttributes *attributes, BOOL *innerStop) {
+            if (CGRectIntersectsRect(rect, attributes.frame)) {
+                [allAttributes addObject:attributes];
+            }
+        }];
+    }];
+    
+    return allAttributes;
+}
 
 #pragma mark - Private
 
