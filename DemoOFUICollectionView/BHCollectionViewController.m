@@ -45,7 +45,7 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
         BHAlbum *album = [[BHAlbum alloc] init];
         album.name = [NSString stringWithFormat:@"photo Album %ld",a + 1];
         
-        NSUInteger photoCount = 1;
+        NSUInteger photoCount = arc4random() % 4 + 2;
         for (NSInteger p = 0; p < photoCount; p++) {
             NSString *photoFileName = [NSString stringWithFormat:@"thumbnail%ld.jpg", photoIndex % 25];
             NSURL *photoURL = [urlPrefix URLByAppendingPathComponent:photoFileName];
