@@ -21,6 +21,8 @@
 		087B571E18195350008780F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087B570018195350008780F9 /* UIKit.framework */; };
 		087B572618195350008780F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 087B572418195350008780F9 /* InfoPlist.strings */; };
 		087B572818195350008780F9 /* DemoOFUICollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B572718195350008780F9 /* DemoOFUICollectionViewTests.m */; };
+		087B57341819547E008780F9 /* BHCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B57321819547E008780F9 /* BHCollectionViewController.m */; };
+		087B57351819547E008780F9 /* BHCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087B57331819547E008780F9 /* BHCollectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		087B572318195350008780F9 /* DemoOFUICollectionViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoOFUICollectionViewTests-Info.plist"; sourceTree = "<group>"; };
 		087B572518195350008780F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		087B572718195350008780F9 /* DemoOFUICollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoOFUICollectionViewTests.m; sourceTree = "<group>"; };
+		087B57311819547E008780F9 /* BHCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHCollectionViewController.h; sourceTree = "<group>"; };
+		087B57321819547E008780F9 /* BHCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHCollectionViewController.m; sourceTree = "<group>"; };
+		087B57331819547E008780F9 /* BHCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHCollectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +124,9 @@
 				087B571218195350008780F9 /* ViewController.m */,
 				087B571418195350008780F9 /* Images.xcassets */,
 				087B570318195350008780F9 /* Supporting Files */,
+				087B57311819547E008780F9 /* BHCollectionViewController.h */,
+				087B57321819547E008780F9 /* BHCollectionViewController.m */,
+				087B57331819547E008780F9 /* BHCollectionViewController.xib */,
 			);
 			path = DemoOFUICollectionView;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087B57351819547E008780F9 /* BHCollectionViewController.xib in Resources */,
 				087B571518195350008780F9 /* Images.xcassets in Resources */,
 				087B570718195350008780F9 /* InfoPlist.strings in Resources */,
 				087B571018195350008780F9 /* Main.storyboard in Resources */,
@@ -249,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087B57341819547E008780F9 /* BHCollectionViewController.m in Sources */,
 				087B571318195350008780F9 /* ViewController.m in Sources */,
 				087B570D18195350008780F9 /* AppDelegate.m in Sources */,
 				087B570918195350008780F9 /* main.m in Sources */,
