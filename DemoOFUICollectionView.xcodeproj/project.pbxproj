@@ -25,6 +25,8 @@
 		087B57351819547E008780F9 /* BHCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087B57331819547E008780F9 /* BHCollectionViewController.xib */; };
 		087B5738181955F1008780F9 /* BHPhotoAlbumLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B5737181955F1008780F9 /* BHPhotoAlbumLayout.m */; };
 		087B573B181957F7008780F9 /* BHAlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B573A181957F7008780F9 /* BHAlbumPhotoCell.m */; };
+		087B574118196EC7008780F9 /* BHAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B573E18196EC7008780F9 /* BHAlbum.m */; };
+		087B574218196EC7008780F9 /* BHPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B574018196EC7008780F9 /* BHPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		087B5737181955F1008780F9 /* BHPhotoAlbumLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPhotoAlbumLayout.m; sourceTree = "<group>"; };
 		087B5739181957F7008780F9 /* BHAlbumPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHAlbumPhotoCell.h; sourceTree = "<group>"; };
 		087B573A181957F7008780F9 /* BHAlbumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHAlbumPhotoCell.m; sourceTree = "<group>"; };
+		087B573D18196EC7008780F9 /* BHAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHAlbum.h; sourceTree = "<group>"; };
+		087B573E18196EC7008780F9 /* BHAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHAlbum.m; sourceTree = "<group>"; };
+		087B573F18196EC7008780F9 /* BHPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHPhoto.h; sourceTree = "<group>"; };
+		087B574018196EC7008780F9 /* BHPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 		087B570218195350008780F9 /* DemoOFUICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				087B573C18196EC7008780F9 /* Model */,
 				087B570B18195350008780F9 /* AppDelegate.h */,
 				087B570C18195350008780F9 /* AppDelegate.m */,
 				087B570E18195350008780F9 /* Main.storyboard */,
@@ -168,6 +175,17 @@
 				087B572418195350008780F9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		087B573C18196EC7008780F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				087B573D18196EC7008780F9 /* BHAlbum.h */,
+				087B573E18196EC7008780F9 /* BHAlbum.m */,
+				087B573F18196EC7008780F9 /* BHPhoto.h */,
+				087B574018196EC7008780F9 /* BHPhoto.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087B574218196EC7008780F9 /* BHPhoto.m in Sources */,
 				087B57341819547E008780F9 /* BHCollectionViewController.m in Sources */,
 				087B571318195350008780F9 /* ViewController.m in Sources */,
 				087B573B181957F7008780F9 /* BHAlbumPhotoCell.m in Sources */,
+				087B574118196EC7008780F9 /* BHAlbum.m in Sources */,
 				087B570D18195350008780F9 /* AppDelegate.m in Sources */,
 				087B570918195350008780F9 /* main.m in Sources */,
 				087B5738181955F1008780F9 /* BHPhotoAlbumLayout.m in Sources */,
