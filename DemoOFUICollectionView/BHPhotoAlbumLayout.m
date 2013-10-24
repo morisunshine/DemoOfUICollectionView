@@ -90,6 +90,11 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     return allAttributes;
 }
 
+- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.layoutInfo[BHPhotoAlbumLayoutPhotoCellKind][indexPath];
+}
+
 #pragma mark - Private
 
 - (CGRect)frameForAlbumPhotoAtIndexPath:(NSIndexPath *)indexPath
