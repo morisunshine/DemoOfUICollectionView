@@ -23,6 +23,7 @@
 		087B572818195350008780F9 /* DemoOFUICollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B572718195350008780F9 /* DemoOFUICollectionViewTests.m */; };
 		087B57341819547E008780F9 /* BHCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B57321819547E008780F9 /* BHCollectionViewController.m */; };
 		087B57351819547E008780F9 /* BHCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087B57331819547E008780F9 /* BHCollectionViewController.xib */; };
+		087B5738181955F1008780F9 /* BHPhotoAlbumLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B5737181955F1008780F9 /* BHPhotoAlbumLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		087B57311819547E008780F9 /* BHCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHCollectionViewController.h; sourceTree = "<group>"; };
 		087B57321819547E008780F9 /* BHCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHCollectionViewController.m; sourceTree = "<group>"; };
 		087B57331819547E008780F9 /* BHCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BHCollectionViewController.xib; sourceTree = "<group>"; };
+		087B5736181955F1008780F9 /* BHPhotoAlbumLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHPhotoAlbumLayout.h; sourceTree = "<group>"; };
+		087B5737181955F1008780F9 /* BHPhotoAlbumLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPhotoAlbumLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				087B57311819547E008780F9 /* BHCollectionViewController.h */,
 				087B57321819547E008780F9 /* BHCollectionViewController.m */,
 				087B57331819547E008780F9 /* BHCollectionViewController.xib */,
+				087B5736181955F1008780F9 /* BHPhotoAlbumLayout.h */,
+				087B5737181955F1008780F9 /* BHPhotoAlbumLayout.m */,
 			);
 			path = DemoOFUICollectionView;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				087B571318195350008780F9 /* ViewController.m in Sources */,
 				087B570D18195350008780F9 /* AppDelegate.m in Sources */,
 				087B570918195350008780F9 /* main.m in Sources */,
+				087B5738181955F1008780F9 /* BHPhotoAlbumLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
