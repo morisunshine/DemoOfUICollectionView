@@ -18,6 +18,7 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
 
 @property (nonatomic, strong) NSMutableArray *albums;
 @property (nonatomic, weak) IBOutlet BHPhotoAlbumLayout *photoAlbumLayout;
+@property (nonatomic, strong) NSOperationQueue *thumbnailQueue;
 
 @end
 
@@ -59,6 +60,9 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
     
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
     [self.collectionView registerClass:[BHAlbumPhotoCell class] forCellWithReuseIdentifier:PhotoCellIdentifier];
+    
+    self.thumbnailQueue = [[NSOperationQueue alloc] init];
+    self.thumbnailQueue.maxConcurrentOperationCount = 3;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -103,7 +107,19 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
     BHAlbum *album = self.albums[indexPath.section];
     BHPhoto *photo = album.photos[indexPath.item];
     
-    photoCell.imageView.image = [photo image];
+    __weak BHCollectionViewController *weakSelf = self;
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        UIImage *image = [photo image];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([weakSelf.collectionView.indexPathsForVisibleItems containsObject:indexPath]) {
+                BHAlbumPhotoCell *cell = (BHAlbumPhotoCell *)[weakSelf.collectionView cellForItemAtIndexPath:indexPath];
+                cell.imageView.image = image;
+            }
+        });
+    }];
+    
+    [self.thumbnailQueue addOperation:operation];
     
     return photoCell;
 }
