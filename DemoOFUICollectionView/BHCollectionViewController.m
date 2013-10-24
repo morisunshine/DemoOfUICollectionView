@@ -8,8 +8,11 @@
 
 #import "BHCollectionViewController.h"
 #import "BHPhotoAlbumLayout.h"
+#import "BHAlbumPhotoCell.h"
 
-@interface BHCollectionViewController ()
+static NSString *const PhotoCellIdentifier = @"PhotoCell";
+
+@interface BHCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, weak) IBOutlet BHPhotoAlbumLayout *photoAlbumLayout;
 
@@ -31,6 +34,7 @@
     [super viewDidLoad];
     
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
+    [self.collectionView registerClass:[BHAlbumPhotoCell class] forCellWithReuseIdentifier:PhotoCellIdentifier];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -38,6 +42,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 10;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BHAlbumPhotoCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCellIdentifier forIndexPath:indexPath];
+    
+    return photoCell;
 }
 
 @end
