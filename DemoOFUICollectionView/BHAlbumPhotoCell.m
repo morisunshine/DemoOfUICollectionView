@@ -8,6 +8,12 @@
 
 #import "BHAlbumPhotoCell.h"
 
+@interface BHAlbumPhotoCell ()
+
+@property (nonatomic, strong, readwrite) UIImageView *imageVIew;
+
+@end
+
 @implementation BHAlbumPhotoCell
 
 - (id)initWithFrame:(CGRect)frame
