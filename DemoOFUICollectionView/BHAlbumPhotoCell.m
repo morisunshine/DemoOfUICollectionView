@@ -30,6 +30,8 @@
         self.layer.shadowRadius = 3.0;
         self.layer.shadowOffset = CGSizeMake(0, 2.0);
         self.layer.shadowOpacity = 0.5;
+        self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+        self.layer.shouldRasterize = YES;
         
         self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
