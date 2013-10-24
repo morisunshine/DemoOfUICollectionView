@@ -100,6 +100,11 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
 {
     BHAlbumPhotoCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCellIdentifier forIndexPath:indexPath];
     
+    BHAlbum *album = self.albums[indexPath.section];
+    BHPhoto *photo = album.photos[indexPath.item];
+    
+    photoCell.imageView.image = [photo image];
+    
     return photoCell;
 }
 
