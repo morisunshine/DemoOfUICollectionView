@@ -9,10 +9,13 @@
 #import "BHPhotoAlbumLayout.h"
 
 static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
+static NSUInteger const RotationCount = 32;
+static NSUInteger const RotationStride = 3;
 
 @interface BHPhotoAlbumLayout ()
 
 @property (nonatomic, strong) NSDictionary *layoutInfo;
+@property (nonatomic, strong) NSArray *rotations;
 
 @end
 
@@ -46,6 +49,23 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     self.itemSize = CGSizeMake(125, 125);
     self.interItemSpacingY = 12;
     self.numberOfColumns = 2;
+    
+    NSMutableArray *rotations = [NSMutableArray arrayWithCapacity:RotationCount];
+    CGFloat percentage = 0.0f;
+    for (NSInteger i = 0; i < RotationCount; i++) {
+        CGFloat newPercentage = 0.0f;
+        do {
+            newPercentage = ((CGFloat) (arc4random() % 220) - 110) * 0.0001;
+        } while (fabsf(percentage - newPercentage) < 0.006);
+        percentage = newPercentage;
+        
+        CGFloat angle = 2 * M_PI * (1.0 + percentage);
+        CATransform3D transform = CATransform3DMakeRotation(angle, 0, 0, 1);
+        
+        [rotations addObject:[NSValue valueWithCATransform3D:transform]];
+    }
+    
+    self.rotations = rotations;
 }
 
 #pragma mark - Layout - 
@@ -66,6 +86,8 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
             
             UICollectionViewLayoutAttributes *itemAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
             itemAttributes.frame = [self frameForAlbumPhotoAtIndexPath:indexPath];
+            itemAttributes.transform3D = [self transformForAlbumPhotoAtIndex:indexPath];
+            
             cellLayoutInfo[indexPath] = itemAttributes;
         }
     }
@@ -172,6 +194,12 @@ static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
     CGFloat originY = floorf(self.itemInsets.top + (self.itemSize.height + self.interItemSpacingY) * row);
     
     return CGRectMake(originX, originY, self.itemSize.width, self.itemSize.height);
+}
+
+- (CATransform3D)transformForAlbumPhotoAtIndex:(NSIndexPath *)indexPath
+{
+    NSInteger offset = (indexPath.section * RotationStride + indexPath.item);
+    return [self.rotations[offset % RotationCount] CATransform3DValue];
 }
 
 @end
