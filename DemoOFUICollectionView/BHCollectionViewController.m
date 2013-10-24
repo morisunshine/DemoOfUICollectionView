@@ -9,11 +9,14 @@
 #import "BHCollectionViewController.h"
 #import "BHPhotoAlbumLayout.h"
 #import "BHAlbumPhotoCell.h"
+#import "BHAlbum.h"
+#import "BHPhoto.h"
 
 static NSString *const PhotoCellIdentifier = @"PhotoCell";
 
 @interface BHCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, strong) NSMutableArray *albums;
 @property (nonatomic, weak) IBOutlet BHPhotoAlbumLayout *photoAlbumLayout;
 
 @end
@@ -32,6 +35,27 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.albums = [NSMutableArray array];
+    NSURL *urlPrefix = [NSURL URLWithString:@"https://raw.github.com/ShadoFlameX/PhotoCollectionView/master/Photos/"];
+    NSInteger photoIndex = 0;
+    
+    for (NSInteger a = 0; a < 12; a++) {
+        BHAlbum *album = [[BHAlbum alloc] init];
+        album.name = [NSString stringWithFormat:@"photo Album %ld",a + 1];
+        
+        NSUInteger photoCount = 1;
+        for (NSInteger p = 0; p < photoCount; p++) {
+            NSString *photoFileName = [NSString stringWithFormat:@"thumbnail%ld.jpg", photoIndex % 25];
+            NSURL *photoURL = [urlPrefix URLByAppendingPathComponent:photoFileName];
+            BHPhoto *photo = [BHPhoto photoWithImageURL:photoURL];
+            [album addPhoto:photo];
+            
+            photoIndex ++;
+        }
+        
+        [self.albums addObject:album];
+    }
     
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
     [self.collectionView registerClass:[BHAlbumPhotoCell class] forCellWithReuseIdentifier:PhotoCellIdentifier];
