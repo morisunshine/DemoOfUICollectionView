@@ -119,6 +119,8 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
         });
     }];
     
+    
+    operation.queuePriority = (indexPath.item == 0) ? NSOperationQueuePriorityHigh : NSOperationQueuePriorityNormal;
     [self.thumbnailQueue addOperation:operation];
     
     return photoCell;

@@ -9,6 +9,7 @@
 #import "BHPhotoAlbumLayout.h"
 
 static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
+static NSUInteger const PhotoCellBaseZIndex = 100;
 static NSUInteger const RotationCount = 32;
 static NSUInteger const RotationStride = 3;
 
@@ -87,6 +88,7 @@ static NSUInteger const RotationStride = 3;
             UICollectionViewLayoutAttributes *itemAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
             itemAttributes.frame = [self frameForAlbumPhotoAtIndexPath:indexPath];
             itemAttributes.transform3D = [self transformForAlbumPhotoAtIndex:indexPath];
+            itemAttributes.zIndex = PhotoCellBaseZIndex + itemCount - item;
             
             cellLayoutInfo[indexPath] = itemAttributes;
         }
