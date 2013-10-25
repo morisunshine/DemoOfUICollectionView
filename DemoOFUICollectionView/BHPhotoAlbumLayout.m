@@ -136,7 +136,7 @@ static NSUInteger const RotationStride = 3;
         rowCount ++;
     }
     
-    CGFloat height = self.itemInsets.top + rowCount * self.itemSize.height * (rowCount - 1) * self.interItemSpacingY + rowCount * self.titleHeight + self.itemInsets.bottom;
+    CGFloat height = self.itemInsets.top + rowCount * self.itemSize.height + (rowCount - 1) * self.interItemSpacingY + rowCount * self.titleHeight + self.itemInsets.bottom;
     
     return CGSizeMake(self.collectionView.bounds.size.width, height);
 }
