@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSString *const BHPhotoAlbumLayoutAlbumTitleKind;
+
 @interface BHPhotoAlbumLayout : UICollectionViewLayout
 
 @property (nonatomic) UIEdgeInsets itemInsets;

@@ -9,10 +9,12 @@
 #import "BHCollectionViewController.h"
 #import "BHPhotoAlbumLayout.h"
 #import "BHAlbumPhotoCell.h"
+#import "BHAlbumTitleReusableView.h"
 #import "BHAlbum.h"
 #import "BHPhoto.h"
 
 static NSString *const PhotoCellIdentifier = @"PhotoCell";
+NSString *const AlbumTitleIdentifier = @"AlbumTitle";
 
 @interface BHCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -60,6 +62,7 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
     
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.25 alpha:1.0];
     [self.collectionView registerClass:[BHAlbumPhotoCell class] forCellWithReuseIdentifier:PhotoCellIdentifier];
+    [self.collectionView registerClass:[BHAlbumTitleReusableView class] forSupplementaryViewOfKind:BHPhotoAlbumLayoutAlbumTitleKind withReuseIdentifier:AlbumTitleIdentifier];
     
     self.thumbnailQueue = [[NSOperationQueue alloc] init];
     self.thumbnailQueue.maxConcurrentOperationCount = 3;
@@ -124,6 +127,15 @@ static NSString *const PhotoCellIdentifier = @"PhotoCell";
     [self.thumbnailQueue addOperation:operation];
     
     return photoCell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    BHAlbumTitleReusableView *titleView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:AlbumTitleIdentifier forIndexPath:indexPath];
+    BHAlbum *album = self.albums[indexPath.section];
+    titleView.titleLabel.text = album.name;
+    
+    return titleView;
 }
 
 @end
