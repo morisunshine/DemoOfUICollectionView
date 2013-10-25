@@ -28,6 +28,7 @@
 		087B574118196EC7008780F9 /* BHAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B573E18196EC7008780F9 /* BHAlbum.m */; };
 		087B574218196EC7008780F9 /* BHPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 087B574018196EC7008780F9 /* BHPhoto.m */; };
 		087B57441819DF19008780F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087B57431819DF19008780F9 /* QuartzCore.framework */; };
+		08C559C7181ABDD300A4F423 /* BHAlbumTitleReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C559C6181ABDD300A4F423 /* BHAlbumTitleReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		087B573F18196EC7008780F9 /* BHPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHPhoto.h; sourceTree = "<group>"; };
 		087B574018196EC7008780F9 /* BHPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPhoto.m; sourceTree = "<group>"; };
 		087B57431819DF19008780F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		08C559C5181ABDD300A4F423 /* BHAlbumTitleReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHAlbumTitleReusableView.h; sourceTree = "<group>"; };
+		08C559C6181ABDD300A4F423 /* BHAlbumTitleReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHAlbumTitleReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				087B5737181955F1008780F9 /* BHPhotoAlbumLayout.m */,
 				087B5739181957F7008780F9 /* BHAlbumPhotoCell.h */,
 				087B573A181957F7008780F9 /* BHAlbumPhotoCell.m */,
+				08C559C5181ABDD300A4F423 /* BHAlbumTitleReusableView.h */,
+				08C559C6181ABDD300A4F423 /* BHAlbumTitleReusableView.m */,
 			);
 			path = DemoOFUICollectionView;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				087B570D18195350008780F9 /* AppDelegate.m in Sources */,
 				087B570918195350008780F9 /* main.m in Sources */,
 				087B5738181955F1008780F9 /* BHPhotoAlbumLayout.m in Sources */,
+				08C559C7181ABDD300A4F423 /* BHAlbumTitleReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +512,7 @@
 				087B572D18195350008780F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		087B572E18195350008780F9 /* Build configuration list for PBXNativeTarget "DemoOFUICollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +521,7 @@
 				087B573018195350008780F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
