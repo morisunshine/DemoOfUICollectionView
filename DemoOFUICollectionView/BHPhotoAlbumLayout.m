@@ -7,9 +7,11 @@
 //
 
 #import "BHPhotoAlbumLayout.h"
+#import "BHEmblemView.h"
 
 static NSString *const BHPhotoAlbumLayoutPhotoCellKind = @"PhotoCell";
 NSString *const BHPhotoAlbumLayoutAlbumTitleKind = @"AlbumTitle";
+static NSString *const BHPhotoEmblemKind = @"Emblem";
 static NSUInteger const PhotoCellBaseZIndex = 100;
 static NSUInteger const RotationCount = 32;
 static NSUInteger const RotationStride = 3;
@@ -69,6 +71,7 @@ static NSUInteger const RotationStride = 3;
     }
     
     self.rotations = rotations;
+    [self registerClass:[BHEmblemView class] forDecorationViewOfKind:BHPhotoEmblemKind];
 }
 
 #pragma mark - Layout - 
@@ -81,6 +84,11 @@ static NSUInteger const RotationStride = 3;
     
     NSInteger sectionCount = [self.collectionView numberOfSections];
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    
+    UICollectionViewLayoutAttributes *emblemAttributes = [UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:BHPhotoEmblemKind withIndexPath:indexPath];
+    emblemAttributes.frame = [self frameForEmblem];
+    
+    newLayoutInfo[BHPhotoEmblemKind] = @{indexPath: emblemAttributes};
     
     for (NSInteger section = 0; section < sectionCount; section++) {
         NSInteger itemCount = [self.collectionView numberOfItemsInSection:section];
@@ -237,6 +245,16 @@ static NSUInteger const RotationStride = 3;
 {
     NSInteger offset = (indexPath.section * RotationStride + indexPath.item);
     return [self.rotations[offset % RotationCount] CATransform3DValue];
+}
+
+- (CGRect)frameForEmblem
+{
+    CGSize size = [BHEmblemView defaultSize];
+    
+    CGFloat originX = floorf((self.collectionView.bounds.size.width - size.width) * 0.5);
+    CGFloat originY = -size.height - 30;
+    
+    return CGRectMake(originX, originY, size.width, size.height);
 }
 
 @end
