@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		084C5E85181E94BB00A6A823 /* concrete_wall_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 084C5E83181E94BB00A6A823 /* concrete_wall_@2X.png */; };
+		084C5E85181E94BB00A6A823 /* concrete_wall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 084C5E83181E94BB00A6A823 /* concrete_wall@2x.png */; };
 		084C5E86181E94BB00A6A823 /* concrete_wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 084C5E84181E94BB00A6A823 /* concrete_wall.png */; };
 		084C5E89181E956E00A6A823 /* BHEmblemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084C5E88181E956E00A6A823 /* BHEmblemView.m */; };
 		084C5E8C181E957F00A6A823 /* emblem.png in Resources */ = {isa = PBXBuildFile; fileRef = 084C5E8A181E957F00A6A823 /* emblem.png */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		084C5E83181E94BB00A6A823 /* concrete_wall_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "concrete_wall_@2X.png"; sourceTree = "<group>"; };
+		084C5E83181E94BB00A6A823 /* concrete_wall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "concrete_wall@2x.png"; sourceTree = "<group>"; };
 		084C5E84181E94BB00A6A823 /* concrete_wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = concrete_wall.png; sourceTree = "<group>"; };
 		084C5E87181E956E00A6A823 /* BHEmblemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHEmblemView.h; sourceTree = "<group>"; };
 		084C5E88181E956E00A6A823 /* BHEmblemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHEmblemView.m; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				084C5E8A181E957F00A6A823 /* emblem.png */,
 				084C5E8B181E957F00A6A823 /* emblem@2x.png */,
-				084C5E83181E94BB00A6A823 /* concrete_wall_@2X.png */,
+				084C5E83181E94BB00A6A823 /* concrete_wall@2x.png */,
 				084C5E84181E94BB00A6A823 /* concrete_wall.png */,
 			);
 			name = Images;
@@ -300,7 +300,7 @@
 			files = (
 				087B57351819547E008780F9 /* BHCollectionViewController.xib in Resources */,
 				087B571518195350008780F9 /* Images.xcassets in Resources */,
-				084C5E85181E94BB00A6A823 /* concrete_wall_@2X.png in Resources */,
+				084C5E85181E94BB00A6A823 /* concrete_wall@2x.png in Resources */,
 				084C5E8C181E957F00A6A823 /* emblem.png in Resources */,
 				084C5E8D181E957F00A6A823 /* emblem@2x.png in Resources */,
 				087B570718195350008780F9 /* InfoPlist.strings in Resources */,

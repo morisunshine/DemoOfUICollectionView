@@ -154,6 +154,11 @@ static NSUInteger const RotationStride = 3;
     return self.layoutInfo[BHPhotoAlbumLayoutAlbumTitleKind][indexPath];
 }
 
+- (UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString *)decorationViewKind atIndexPath:(NSIndexPath *)indexPath
+{
+    return self.layoutInfo[BHPhotoEmblemKind][indexPath];
+}
+
 #pragma mark - Setters -
 
 - (void)setItemInsets:(UIEdgeInsets)itemInsets
