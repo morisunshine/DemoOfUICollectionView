@@ -1,4 +1,4 @@
 DemoOfUICollectionView
 ======================
 
-A demo of this tutorial introducted to UICollectionView
+A demo of this [tutorial](http://skeuo.com/uicollectionview-custom-layout-tutorial) introducted to UICollectionView
