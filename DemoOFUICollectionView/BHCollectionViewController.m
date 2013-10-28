@@ -39,6 +39,9 @@ NSString *const AlbumTitleIdentifier = @"AlbumTitle";
 {
     [super viewDidLoad];
     
+    UIImage *patternImage = [UIImage imageNamed:@"concrete_wall"];
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+    
     self.albums = [NSMutableArray array];
     NSURL *urlPrefix = [NSURL URLWithString:@"https://raw.github.com/ShadoFlameX/PhotoCollectionView/master/Photos/"];
     NSInteger photoIndex = 0;

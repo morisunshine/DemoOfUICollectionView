@@ -219,7 +219,7 @@ static NSUInteger const RotationStride = 3;
     }
     
     CGFloat originX = floorf(self.itemInsets.left + (self.itemSize.width + spacingX) * column);
-    CGFloat originY = floorf(self.itemInsets.top + self.titleHeight + (self.itemSize.height + self.interItemSpacingY) * row);
+    CGFloat originY = floorf(self.itemInsets.top + (self.titleHeight + self.itemSize.height + self.interItemSpacingY) * row);
     
     return CGRectMake(originX, originY, self.itemSize.width, self.itemSize.height);
 }
